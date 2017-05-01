@@ -27,6 +27,7 @@
         <activity android:name=".mvp.ui.activity.ActorsActivity"/>
         <activity android:name=".mvp.ui.activity.ActorViewActivity"/>
         <activity android:name=".mvp.ui.activity.ActorFragmentActivity"/>
+        <activity android:name=".mvp.ui.activity.ActorAndPictureFragmentActivity"/>
     </application>
 
 </manifest>

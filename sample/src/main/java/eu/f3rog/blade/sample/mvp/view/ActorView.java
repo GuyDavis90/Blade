@@ -13,4 +13,6 @@ public interface ActorView extends IView {
     void showError(@NonNull final String errorMessage);
 
     void show(@NonNull final ActorDetail actorDetail);
+
+    void showTextOnButton(String text);
 }

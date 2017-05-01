@@ -29,6 +29,11 @@ public final class MvpMainActivity
         I.startActorsActivity(this, ActorsActivity.DetailType.ACTIVITY_WITH_VIEW);
     }
 
+    @OnClick(R.id.btn_4)
+    void showExample4() {
+        I.startActorsActivity(this, ActorsActivity.DetailType.ACTIVITY_WITH_VIEW_WITH_PICTURE);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

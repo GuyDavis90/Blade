@@ -4,10 +4,10 @@ import android.support.annotation.NonNull;
 
 import dagger.Module;
 import dagger.Provides;
-import eu.f3rog.blade.sample.mvp.service.DataService;
 import eu.f3rog.blade.sample.mvp.presenter.ActorListPresenter;
 import eu.f3rog.blade.sample.mvp.presenter.ActorPresenter;
-import rx.Scheduler;
+import eu.f3rog.blade.sample.mvp.presenter.PicturePresenter;
+import eu.f3rog.blade.sample.mvp.service.DataService;
 
 
 @Module
@@ -21,5 +21,10 @@ public class PresenterModule {
     @Provides
     public ActorPresenter provideActorPresenter(@NonNull final DataService dataService) {
         return new ActorPresenterImpl(dataService);
+    }
+
+    @Provides
+    public PicturePresenter providePicturePresenter() {
+        return new PicturePresenterImpl();
     }
 }

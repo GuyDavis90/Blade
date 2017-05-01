@@ -87,4 +87,9 @@ public final class ActorCustomView
         Component.forApp().inject(this);
         mPresenter.setActorId((Long) getTag());
     }
+
+    @Override
+    public void showTextOnButton(String text) {
+        // noop
+    }
 }

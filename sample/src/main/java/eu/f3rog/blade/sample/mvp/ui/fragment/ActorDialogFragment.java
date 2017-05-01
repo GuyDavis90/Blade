@@ -73,4 +73,9 @@ public final class ActorDialogFragment
     public void show(@NonNull final ActorDetail actorDetail) {
         mTextView.setText(actorDetail.toString());
     }
+
+    @Override
+    public void showTextOnButton(String text) {
+        // noop
+    }
 }

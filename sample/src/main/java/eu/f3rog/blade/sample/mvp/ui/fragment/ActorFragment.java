@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import javax.inject.Inject;
@@ -14,6 +15,7 @@ import javax.inject.Inject;
 import blade.Arg;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import eu.f3rog.blade.sample.R;
 import eu.f3rog.blade.sample.mvp.di.component.Component;
 import eu.f3rog.blade.sample.mvp.model.ActorDetail;
@@ -25,7 +27,7 @@ import eu.f3rog.blade.sample.mvp.view.ActorView;
  *
  * @author FrantisekGazo
  */
-public final class ActorFragment
+public class ActorFragment
         extends Fragment
         implements ActorView {
 
@@ -34,6 +36,9 @@ public final class ActorFragment
 
     @Inject
     ActorPresenter mPresenter;
+
+    @BindView(R.id.test_button)
+    Button mTestButton;
 
     @BindView(android.R.id.text1)
     TextView mTextView;
@@ -66,5 +71,15 @@ public final class ActorFragment
     @Override
     public void show(@NonNull final ActorDetail actorDetail) {
         mTextView.setText(actorDetail.toString());
+    }
+
+    @OnClick(R.id.test_button)
+    void onClickTestButton() {
+        mPresenter.updateTextOnButton();
+    }
+
+    @Override
+    public void showTextOnButton(String text) {
+        mTestButton.setText(text);
     }
 }

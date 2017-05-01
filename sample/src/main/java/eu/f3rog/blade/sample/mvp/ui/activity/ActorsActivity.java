@@ -37,7 +37,7 @@ public final class ActorsActivity
         implements ActorListView, ActorAdapter.OnActorClickListener {
 
     public enum DetailType {
-        DIALOG_FRAG, ACTIVITY_WITH_FRAG, ACTIVITY_WITH_VIEW
+        DIALOG_FRAG, ACTIVITY_WITH_FRAG, ACTIVITY_WITH_VIEW, ACTIVITY_WITH_VIEW_WITH_PICTURE
     }
 
     @Extra
@@ -98,6 +98,9 @@ public final class ActorsActivity
                 break;
             case ACTIVITY_WITH_VIEW:
                 I.startActorViewActivity(this, actor.getId(), actor.getName());
+                break;
+            case ACTIVITY_WITH_VIEW_WITH_PICTURE:
+                I.startActorAndPictureFragmentActivity(this, actor.getId(), actor.getName());
                 break;
         }
     }
