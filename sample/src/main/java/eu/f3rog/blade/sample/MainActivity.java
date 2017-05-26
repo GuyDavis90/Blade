@@ -34,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
         I.startTestParcelActivity(this);
     }
 
+    @OnClick(R.id.btn_go_kotlin)
+    public void gotoKotlin() {
+        I.startKotlinActivity(this);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

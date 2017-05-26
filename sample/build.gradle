@@ -9,12 +9,17 @@ buildscript {
         }
 
         classpath 'com.android.tools.build:gradle:2.2.2'
-        classpath 'eu.f3rog.blade:plugin:2.6.2-weave-into-c'
+        classpath 'eu.f3rog.blade:plugin:2.6.3'
     }
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply plugin: 'blade'
+
+kapt {
+    generateStubs = true
+}
 
 android {
     compileSdkVersion 25
@@ -62,10 +67,10 @@ dependencies {
 
     /* Dagger2 - needed for MVP module */
     compile 'com.google.dagger:dagger:2.8'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.8'
+    kapt 'com.google.dagger:dagger-compiler:2.8'
     /* ButterKnife */
     compile 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    kapt 'com.jakewharton:butterknife-compiler:8.4.0'
     /* Rx */
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.2.5'
@@ -78,4 +83,8 @@ dependencies {
     compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
 
     testCompile 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

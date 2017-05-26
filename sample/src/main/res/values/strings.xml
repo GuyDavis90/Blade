@@ -6,6 +6,7 @@
     <string name="goto_state">state</string>
     <string name="goto_mvp">mvp</string>
     <string name="goto_parcel">parcel</string>
+    <string name="goto_kotlin">kotlin</string>
 
     <string name="show_text">Show text</string>
     <string name="show_dialog">Show dialog</string>
